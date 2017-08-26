@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id = "container">
+        <div id = "quote"></div>
+        <p class = "author"></p>
+        <hr/>
+        <button id = "next" onclick="">Next Quote</button>
+
+
+        <a class="twitter-share share" href="#"><i class="fa fa-twitter"></i></a>
+        <a class="tumblr-share share" href="#" target="_blank"><i class = "fa fa-tumblr-square"></i></a>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        updateQuote();
+        $('#next').on('click', updateQuote);
+        });
+        function updateQuote(){
+            $.ajax({
+            url: "https://andruxnet-random-famous-quotes.p.mashape.com?cat=famous",
+            method: "GET",
+            dataType: "json",
+            error: function(err) { alert(err); },
+            beforeSend: function(xhr){
+              xhr.setRequestHeader("X-Mashape-Authorization", "k41RJAjbdZmshe5gUSx4NwHMoYkap1SKYa9jsnjJ2hKtqiQcnt");
+            }
+            }).done(function(data){
+              $("#quote").text(data.quote);
+              $(".author").text("- " + data.author);
+              $('.twitter-share').attr('href','https://twitter.com/intent/tweet?text=' + data.quote + ' '+data.author +'');
+              $('.tumblr-share').attr('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&caption='+encodeURIComponent(data.quote)+'&content=' + encodeURIComponent(data.author)+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+            })
+        }
+
+    </script>
+</body>
+</html>

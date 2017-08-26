@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+#container{
+  background-color:#484848;
+  width:40%;
+  margin-left:30%;
+  margin-top:10%;
+  padding: 20px 30px;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  border-radius:5px;
+  box-shadow:10px 10px 7px ;
+}
+.author{
+  text-align: right;
+}
+
+#next{
+  margin-left: 40%;
+  background-color: #989898;
+  border:3px solid #989898;
+  border-radius: 2px;
+  padding: 2px 4px 2px 4px;
+  font-size: 15px;
+  box-shadow: 2px 2px 2px;
+  font-family: 'Oswald', sans-serif;
+}
+.twitter-share{
+  float: left;
+}
+.tumblr-share{
+  float: right;
+  color: black;
+}
+.share{
+  border: 6px solid #696969;
+  border-radius:5px;
+  box-shadow: 1px 1px 2px black;
+  background-color: #696969;
+  text-decoration: none;
+}
+body{
+  background-color:#181818;
+  font-family: 'Open Sans', sans-serif;;
+}
