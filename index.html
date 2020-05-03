@@ -9,15 +9,31 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    <div id = "container">
-        <div id = "quote"></div>
-        <p class = "author"></p>
-        <hr/>
-        <button id = "next" onclick="">Next Quote</button>
+    <nav>
+        <div class="theme-switch-wrapper">
+             <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+          <em>Enable Dark Mode</em>
+        </div>
+
+    </nav>
 
 
-        <a class="twitter-share share" href="#"><i class="fa fa-twitter"></i></a>
-        <a class="tumblr-share share" href="#" target="_blank"><i class = "fa fa-tumblr-square"></i></a>
+
+    <div id="App">
+        <h1>Random Quotes</h1>
+        <div id = "container">
+            <div id = "quote"></div>
+            <p class = "author"></p>
+            <hr/>
+            <div class="lower">
+                <a class="twitter-share share" href="#"><i class="fa fa-twitter"></i></a>
+                <button id = "next" onclick="">Next Quote</button>
+                <a class="tumblr-share share" href="#" target="_blank"><i class = "fa fa-tumblr-square"></i></a>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="index.js"></script>
