@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 function updateQuote(){
   $.ajax({
-    url: "https://quotes.stormconsultancy.co.uk/random.json",
+    url: "http://quotes.stormconsultancy.co.uk/random.json",
     method: "GET",
     dataType: "json",
     error: function(err) { alert(err); },
